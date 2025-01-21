@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link rel="stylesheet" href="../script.js">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+        <!-- Navbar -->
+        <nav class="bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg p-4 shadow-lg">
+          <div class="container mx-auto flex justify-between items-center px-8">
+            <!-- Logo -->
+            <img src="../img/nf.jpg" alt="" srcset="" style="height: 60px; width: 60px; border-radius: 50%;">
+    
+            <!-- Menu Items -->
+            <div class="hidden md:flex space-x-6 m-auto">
+              <a href="../index.html" id="text" class="text-white text-xl underline underline-offset-4 hover:underline-offset-8">home</a>
+              <a href="../index.html" id="text" class="text-white text-xl underline underline-offset-4 hover:underline-offset-8">ruangan</a>
+              <a href="../index.html" id="text" class="text-white text-xl underline underline-offset-4 hover:underline-offset-8">map</a>
+              <a href="../index.html" id="text" class="text-white text-xl underline underline-offset-4 hover:underline-offset-8">Contact</a>
+            </div>
+    
+            <div>
+               <a href="admin/form.html">
+                <button class="text-white px-4 py-3 bg-[#991b1b] rounded-full text-xl">sign in</button>
+               </a>
+            </div>
+    
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+              <!-- Icon -->
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+    
+          <!-- Mobile Menu -->
+          <div id="mobile-menu" class="hidden md:hidden">
+            <a href="../index.html" class="text-white hover:text-blue-200">home</a>
+            <a href="../index.html" class="text-white hover:text-blue-200">ruangan</a>
+            <a href="../index.html" class="text-white hover:text-blue-200">map</a>
+            <a href="../index.html" class="text-white hover:text-blue-200">Contact</a>
+          </div>
+      </nav>
+
+<section class="title w-full">
+    <img class="w-full h-52"  style="filter: brightness(50%);" src="../img/room1.jpeg" alt="">
+    <div class="flex flex-row" style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%);">
+        <h1 class="text-3xl font-bold text-white p-4">RUANG KELAS B1 105</h1>
+        <button class="text-white bg-blue-600 p-2 m-4 rounded-lg">BOOK NOW</button>
+    </div>
+</section>
+
+<section class="container my-5 p-3 bg-light">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../img/room1.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../img/room1.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../img/room1.jpeg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <h1 class="text-3xl font-bold text-center my-4">FASILITAS</h1>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fas fa-temperature-low m-2"></i>AC</li>
+          <li class="list-group-item"><i class="fas fa-camera-retro m-2"></i>Proyektor</li>
+          <li class="list-group-item"><i class="fas fa-table m-2"></i>Meja</li>
+          <li class="list-group-item"><i class="fas fa-chair m-2"></i>kursi</li>
+          <li class="list-group-item"><i class="fas fa-wifi m-2"></i>wifi</li>
+
+          <section>
+              <div class="flex content-evenly items-center justify-center py-4">
+                <div class="box p-2 border-2 border-gray-400 rounded-md m-2">
+                  <h1>kategori:</h1>
+                  <h1>RUANG KELAS</h1>
+                </div>
+                <div class="box p-2 border-2 border-gray-400 rounded-md m-2">
+                  <h1>GEDUNG</h1>
+                  <h1>KAMPUS B</h1>
+                </div>
+                <div class="box p-2 border-2 border-gray-400 rounded-md m-2">
+                  <h1>LANTAI</h1>
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="box p-2 border-2 border-gray-400 rounded-md m-2">
+                  <h1>RUANG</h1>
+                  <h1>B1 105</h1>
+                </div>
+              </div>            
+          </section>
+
+      </div>
+    </div>
+</section>
+
+    <script src="../script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
