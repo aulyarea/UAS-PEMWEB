@@ -260,7 +260,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="col-sm-12">
         <form>
             <div class="form-group row">
-              <label for="text" class="col-4 col-form-label">Nama</label> 
+              <label for="namaRuangan" class="col-4 col-form-label">Nama Ruangan</label> 
               <div class="col-4">
                 <div class="input-group">
                   <div class="input-group-prepend">
@@ -268,14 +268,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <i class="fa fa-address-book-o"></i>
                     </div>
                   </div> 
-                  <input id="text" name="text" type="text" class="form-control">
+                  <input id="namaRuangan" name="text" type="text" class="form-control">
                 </div>
               </div>
             </div>
             <div class="form-group row">
-              <label for="select" class="col-4 col-form-label">Kategori</label> 
+              <label for="kategori" class="col-4 col-form-label">Kategori</label> 
               <div class="col-4">
-                <select id="select" name="select" class="custom-select">
+                <select id="kategori" name="select" class="custom-select">
                   <option value="Ruang Kelas">Ruang kelas</option>
                   <option value="aula">Aula</option>
                   <option value="auditorium">Auditorium</option>
@@ -293,16 +293,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <label class="col-4">Fasilitas Ruangan</label> 
               <div class="col-4">
                 <div class="custom-control custom-checkbox custom-control-inline">
-                  <input name="checkbox" id="checkbox_0" type="checkbox" checked="checked" class="custom-control-input" value="rabbit"> 
-                  <label for="checkbox_0" class="custom-control-label">AC</label>
+                  <input name="checkbox" id="fasilitasac" type="checkbox" checked="checked" class="custom-control-input" value="rabbit"> 
+                  <label for="fasilitasac" class="custom-control-label">AC</label>
                 </div>
                 <div class="custom-control custom-checkbox custom-control-inline">
-                  <input name="checkbox" id="checkbox_1" type="checkbox" class="custom-control-input" value="duck"> 
-                  <label for="checkbox_1" class="custom-control-label">WIFI</label>
+                  <input name="checkbox" id="fasilitaswifi" type="checkbox" class="custom-control-input" value="duck"> 
+                  <label for="fasilitaswifi" class="custom-control-label">WIFI</label>
                 </div>
                 <div class="custom-control custom-checkbox custom-control-inline">
-                  <input name="checkbox" id="checkbox_2" type="checkbox" class="custom-control-input" value="fish"> 
-                  <label for="checkbox_2" class="custom-control-label">Proyektor</label>
+                  <input name="checkbox" id="fasilitasproyektor" type="checkbox" class="custom-control-input" value="fish"> 
+                  <label for="fasilitasproyektor" class="custom-control-label">Proyektor</label>
                 </div>
               </div>
             </div>
@@ -313,14 +313,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
             </div>
             <div class="form-group row">
-              <label for="text2" class="col-4 col-form-label">Lokasi Ruangan</label> 
+              <label for="lokasi" class="col-4 col-form-label">Lokasi Ruangan</label> 
               <div class="col-4">
-                <input id="text2" name="text2" type="text" class="form-control">
+                <input id="lokasi" name="lokasi" type="text" class="form-control">
               </div>
             </div> 
             <div class="form-group row">
               <div class="offset-4 col-8">
-                <button name="submit" type="submit" class="btn btn-secondary">Simpan</button>
+                <button id="btnSimpan" name="submit" type="submit" class="btn btn-secondary">Simpan</button>
+                <button name="submit" type="submit" class="btn btn-secondary">Reset</button>
               </div>
             </div>
           </form>
@@ -333,6 +334,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+  <script>
+    document.getElementById("btnSimpan").addEventListener("click", function (e) {
+  e.preventDefault();
+  
+  const namaRuangan = document.getElementById("namaRuangan").value;
+  const lokasi = document.getElementById("lokasi").value;
+  const fasilitas = [];
+  if (document.getElementById("fasilitasac").checked) fasilitas.push("AC");
+  // if (document.getElementById("fasilitaswifi").checked) fasilitas.push("WIFI");
+  // if (document.getElementById("fasilitasproyektor").checked) fasilitas.push("Proyektor");
+  const kategori = document.getElementById("kategori").value;
+
+  const query = `?namaRuangan=${encodeURIComponent(namaRuangan)}&lokasi=${encodeURIComponent(lokasi)}&kategori=${encodeURIComponent(kategori)}&fasilitas=${encodeURIComponent(fasilitas.join(", "))}`;
+  window.location.href = "backend.html" + query;
+});
+
+  </script>
+
+
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark" id="peminjaman">
